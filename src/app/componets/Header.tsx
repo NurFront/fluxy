@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import '../css/header.css'
 import { useRouter } from 'next/navigation'
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -51,8 +52,10 @@ const Header = () => {
           </div>
           {isProfileOpen && (
             <div className='profile-container'>
-              <button onClick={handleLogout} className='logout'>Выйти</button>
-              <div onClick={closeProfileMenu} style={{ color: 'black' }}>X</div>
+                <h1 className='gmail-profile'>{userEmail}</h1>
+                <h1 className='gmail-one'>{userEmail.charAt(0).toUpperCase()}</h1>
+              <button onClick={handleLogout} className='logout'><LogoutIcon />Выйти</button>
+              <div onClick={closeProfileMenu} className='close-con'>X</div>
             </div>
           )}
         </div>
