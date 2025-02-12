@@ -25,13 +25,14 @@ const Posts = ({ userEmail }: { userEmail: string }) => {
   const [userLikes, setUserLikes] = useState<boolean[]>([]);
   const [isMobile, setIsMobile] = useState(false);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
     window.addEventListener('resize', handleResize);
-    handleResize()
+    handleResize();
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -51,7 +52,8 @@ const Posts = ({ userEmail }: { userEmail: string }) => {
           };
         });
 
-        const sortedPosts = postsData.sort((a, b) => a.createdAt.seconds - b.createdAt.seconds);
+        // Сортировка постов по убыванию времени создания
+        const sortedPosts = postsData.sort((a, b) => b.createdAt.seconds - a.createdAt.seconds);
 
         setPosts(sortedPosts);
         setLikes(sortedPosts.map((post) => post.likedBy.length));
@@ -83,8 +85,8 @@ const Posts = ({ userEmail }: { userEmail: string }) => {
         likedBy: [],
       });
 
-      setPosts([...posts, { id: docRef.id, text, email: userEmail, likedBy: [], createdAt: { seconds: Math.floor(Date.now() / 1000), nanoseconds: 0 } }]);
-      setLikes([...likes, 0]);
+      setPosts([{ id: docRef.id, text, email: userEmail, likedBy: [], createdAt: { seconds: Math.floor(Date.now() / 1000), nanoseconds: 0 } }, ...posts]);
+      setLikes([0, ...likes]);
       setText('');
     } catch (error) {
       console.error('Ошибка при добавлении поста:', error);

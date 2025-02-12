@@ -150,7 +150,7 @@ button {
   color: wheat;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    z-index: 1000;
+  z-index: 1000;
 }
 
 .settings-icon {
@@ -244,7 +244,7 @@ button {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 10px; 
+  gap: 10px;
   height: 450px;
   max-height: 450px;
   overflow-y: auto;
@@ -254,7 +254,7 @@ button {
 
 .posted-text {
   padding: 15px;
-  background-color: #f4f4f4; 
+  background-color: #f4f4f4;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -271,14 +271,15 @@ button {
   color: #555;
   position: absolute;
   margin-top: 0px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 500
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
 }
 
 .posted-text p {
   font-size: 22px;
   color: #000;
-  word-wrap: break-word; 
+  word-wrap: break-word;
   margin-bottom: 5px;
 }
 
@@ -320,7 +321,8 @@ button {
   left: 600px;
   top: 300px;
   font-size: 20px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: wheat;
   padding: 20px;
 }
@@ -343,7 +345,8 @@ button {
     margin-left: 20px;
   }
 
-  .signin, .gmail-account {
+  .signin,
+  .gmail-account {
     width: 80%;
     margin: 10px 10;
   }
@@ -352,6 +355,11 @@ button {
     margin-left: 0;
     margin-right: 0;
     font-size: 16px;
+  }
+
+  .loading {
+    position: absolute;
+    left: 100px;
   }
 
   .gmail-account {
@@ -369,7 +377,8 @@ button {
     height: 250px;
   }
 
-  .logout, .logout-icon {
+  .logout,
+  .logout-icon {
     top: 210px;
     left: 50px;
   }
@@ -410,16 +419,6 @@ button {
     top: 400px;
     padding: 8px;
     font-size: 14px;
-    display: none;
-  }
-
-  .sendPost1 {
-    left: 84%;
-    position: absolute;
-    top: 505px;
-    padding: 8px;
-    font-size: 14px;
-    display: block;
   }
 
   .posted-texts {
@@ -446,6 +445,8 @@ button {
   .like-btn {
     font-size: 14px;
     padding: 2px 6px;
+    position: relative;
+    left: 190px;
   }
 
   .delete-btn {
@@ -481,7 +482,8 @@ button {
     top: 120px;
   }
 
-  .logout, .logout-icon {
+  .logout,
+  .logout-icon {
     top: 180px;
     left: 30px;
   }
@@ -510,7 +512,7 @@ button {
 
   .sendPost {
     left: 85%;
-    top: 550px;
+    top: 510px;
     padding: 6px;
     font-size: 12px;
   }

@@ -6,10 +6,14 @@ import { auth } from '@/app/firebase'
 import { useRouter } from 'next/navigation'
 
 const SignIn = () => {
-  const { replace } = useRouter()
+  const { replace, push } = useRouter()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
+
+  const regAcc = () => {
+    push('/login/signup')
+  }
 
   function login(e: React.FormEvent) {
     e.preventDefault()
@@ -51,6 +55,7 @@ const SignIn = () => {
         <button type="submit">Войти</button>
         {error && <p>{error}</p>}
       </form>
+      <button onClick={regAcc}>Зарегистрироватся</button>
     </div>
   )
 }
