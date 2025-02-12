@@ -63,7 +63,7 @@ button {
   width: 300px;
   height: 300px;
   top: 100px;
-  right: 50;
+  right: 300;
   background-color: brown;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 2);
   transition: all 1s ease-in-out;
