@@ -137,7 +137,7 @@ button {
   font-weight: bold;
   cursor: pointer;
   position: absolute;
-  top: 20;
+  top: 20px;
 }
 
 .settings-profile {
