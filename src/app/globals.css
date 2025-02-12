@@ -1,4 +1,11 @@
 body {
   margin: 0;
   padding: 0;
+  background-image: url(tree_minimalism_bw_132704_1280x720.jpg);
+}
+
+@media (max-width: 768px) {
+  body {
+    background-image: none;
+  }
 }
