@@ -37,8 +37,7 @@ const Header = () => {
   return (
     <>
       <div className="header-container">
-        <div className="header-title">F L U X</div>
-
+        <div className="header-title">F L U X Y</div>
         {isLoggedIn ? (
           <div>
             <div className="gmail-account" onClick={toggleProfile}>

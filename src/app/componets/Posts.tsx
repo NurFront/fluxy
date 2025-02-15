@@ -52,9 +52,7 @@ const Posts = ({ userEmail }: { userEmail: string }) => {
           };
         });
 
-        // Сортировка постов по убыванию времени создания
-        const sortedPosts = postsData.sort((a, b) => b.createdAt.seconds - a.createdAt.seconds);
-
+        const sortedPosts = postsData.sort((a, b) => a.createdAt.seconds - b.createdAt.seconds); // Сортировка по времени (старые сверху)
         setPosts(sortedPosts);
         setLikes(sortedPosts.map((post) => post.likedBy.length));
         setUserLikes(sortedPosts.map((post) => post.likedBy.includes(userEmail)));
@@ -85,8 +83,14 @@ const Posts = ({ userEmail }: { userEmail: string }) => {
         likedBy: [],
       });
 
-      setPosts([{ id: docRef.id, text, email: userEmail, likedBy: [], createdAt: { seconds: Math.floor(Date.now() / 1000), nanoseconds: 0 } }, ...posts]);
-      setLikes([0, ...likes]);
+      setPosts([...posts, { // Добавляем новое сообщение в конец массива
+        id: docRef.id,
+        text,
+        email: userEmail,
+        likedBy: [],
+        createdAt: { seconds: Math.floor(Date.now() / 1000), nanoseconds: 0 },
+      }]);
+      setLikes([...likes, 0]); // Добавляем лайки для нового сообщения
       setText('');
     } catch (error) {
       console.error('Ошибка при добавлении поста:', error);
@@ -140,7 +144,7 @@ const Posts = ({ userEmail }: { userEmail: string }) => {
   return (
     <div>
       <div className="post-input-container">
-        <textarea className="inputPost" value={text} onChange={handleChange} placeholder="Введите текст..." maxLength={100} />
+        <textarea className="inputPost" value={text} onChange={handleChange} placeholder="Введите сообщение..." maxLength={100} />
         <button className="sendPost" onClick={sendPost}>
           <SendIcon className="sendPostIcon" />
         </button>
