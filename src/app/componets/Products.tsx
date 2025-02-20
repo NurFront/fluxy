@@ -8,8 +8,9 @@ const Products = () => {
   return (
     <div>
       <div>
-        <div className="friends-container"></div>
+        <div className="friends-container"></div>\
       </div>
+      <button className='btn'>+</button>
     </div>
   );
 };

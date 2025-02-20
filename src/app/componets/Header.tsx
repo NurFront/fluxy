@@ -5,7 +5,7 @@ import '../css/header.css';
 import { useRouter } from 'next/navigation';
 import LogoutIcon from '@mui/icons-material/Logout';
 import SettingsIcon from '@mui/icons-material/Settings';
-import Posts from './Posts'; // Импортируем компонент
+import Posts from './Posts';
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

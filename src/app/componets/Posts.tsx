@@ -52,7 +52,8 @@ const Posts = ({ userEmail }: { userEmail: string }) => {
           };
         });
 
-        const sortedPosts = postsData.sort((a, b) => a.createdAt.seconds - b.createdAt.seconds); // Сортировка по времени (старые сверху)
+        const sortedPosts = postsData.sort((a, b) => b.createdAt.seconds - a.createdAt.seconds);
+
         setPosts(sortedPosts);
         setLikes(sortedPosts.map((post) => post.likedBy.length));
         setUserLikes(sortedPosts.map((post) => post.likedBy.includes(userEmail)));
@@ -83,14 +84,8 @@ const Posts = ({ userEmail }: { userEmail: string }) => {
         likedBy: [],
       });
 
-      setPosts([...posts, { // Добавляем новое сообщение в конец массива
-        id: docRef.id,
-        text,
-        email: userEmail,
-        likedBy: [],
-        createdAt: { seconds: Math.floor(Date.now() / 1000), nanoseconds: 0 },
-      }]);
-      setLikes([...likes, 0]); // Добавляем лайки для нового сообщения
+      setPosts([{ id: docRef.id, text, email: userEmail, likedBy: [], createdAt: { seconds: Math.floor(Date.now() / 1000), nanoseconds: 0 } }, ...posts]);
+      setLikes([0, ...likes]);
       setText('');
     } catch (error) {
       console.error('Ошибка при добавлении поста:', error);

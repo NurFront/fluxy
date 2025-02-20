@@ -184,7 +184,7 @@ button {
   white-space: pre-wrap;
   word-wrap: break-word;
   box-sizing: border-box;
-  min-height: 55px;
+  min-height: 40px;
   max-width: 500px;
   outline: none;
   left: 400px;
